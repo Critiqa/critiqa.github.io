@@ -1,0 +1,36 @@
+body {
+    background-color: darkslategray;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+table {
+    background-color: blanchedalmond;
+    width: 70%;
+    border-radius: 15px;
+    margin: auto;
+}
+
+.table-header {
+    font-weight: bold;
+}
+
+.table-look {
+    border-radius: 15px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.text-randomizer {
+    background-color: whitesmoke;
+}
+
+button {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 15px;
+}
+
+button:hover {
+    background-color: darkgray;
+}
