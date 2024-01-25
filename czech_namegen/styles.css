@@ -3,9 +3,13 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
+#title {
+    font-size: larger;
+}
+
 table {
     background-color: blanchedalmond;
-    width: 70%;
+    width: 450px;
     border-radius: 15px;
     margin: auto;
 }
@@ -31,6 +35,10 @@ button {
     border-radius: 15px;
 }
 
-button:hover {
-    background-color: darkgray;
+@media (hover: hover) {
+    button:hover {
+        background-color: black;
+        color:white;
+        transition-duration: 1s;
+    }
 }
