@@ -42,3 +42,34 @@ button {
         transition-duration: 1s;
     }
 }
+.generated-words {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.generated-words td {
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: white;
+}
+
+#word-list {
+    text-align: center;
+}
+
+#count-place {
+    width: 200px;
+    background-color: antiquewhite;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+#counter {
+    font-weight: bolder;
+    color: crimson;
+}

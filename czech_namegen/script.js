@@ -1,5 +1,10 @@
 alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
+const words = [];
+let genwords = "";
+let first = false;
+let counter = 0;
+
 function randNumb(min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
   }
@@ -19,7 +24,18 @@ function randName(){
     return retpushname;
 }
 
-function getthedate() {
-    document.getElementById('demo').innerHTML=randName();
+function writeThemOut() {
+    document.getElementById("word-list").innerHTML = genwords;
+    genwords += words[words.length - 1] + ", ";
 }
+
+function getthedate() {
+    words.push(randName());
+    document.getElementById('demo').innerHTML=words[words.length - 1];
+    writeThemOut();
+    counter += 1;
+    document.getElementById("counter").innerText = counter;
+}
+
+
 
