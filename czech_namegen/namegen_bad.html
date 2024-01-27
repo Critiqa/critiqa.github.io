@@ -11,7 +11,21 @@
     <table>
         <tr>
             <td class="table-header table-look" >
-                <p id="title">A Czech name generator</p>
+                <p id="title">A name generator</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="table-look" style="font-weight: bolder; background-color: antiquewhite;">Settings</td>
+        </tr>
+        <tr>
+            <td class="table-look settings-look">
+                <table class="setting-table-class">
+                    <tr>
+                        <td width="5px"><label id="range-slider-label" for="range-slider">length</label></td>
+                        <td rowspan="2"><input type="range" id="range-slider" step="1" value="8" min="3" max="30" class="slider"></td>
+                    </tr>
+                    <tr><td id="range-slider-text">8</td></tr>
+                </table>
             </td>
         </tr>
         <tr>

@@ -73,3 +73,20 @@ button {
     font-weight: bolder;
     color: crimson;
 }
+
+.settings-look {
+    text-align: left;
+    padding-left: 10px;
+    font-size: 12px;
+}
+
+#range-slider {
+    width: 100%;
+    color: darkslategray;
+}
+
+#range-slider-label {
+    font-weight: bolder;
+    margin-left: auto;
+    margin-right: auto;
+}

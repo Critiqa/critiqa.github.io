@@ -1,16 +1,26 @@
 alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+consonants = 'bcdfghjklmnpqrstvwxyz'.split('');
+vowels = 'aeiuo'.split('');
 
 const words = [];
 let genwords = "";
 let first = false;
 let counter = 0;
 
+var slider = document.getElementById("range-slider");
+var sliderOutput = document.getElementById("range-slider-text");
+sliderOutput.innerHTML = slider.value; 
+
+slider.oninput = function() {
+    sliderOutput.innerHTML = slider.value;
+}
+
 function randNumb(min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
   }
 
 function randName(){
-    const lengthNum = randNumb(5, 12);
+    const lengthNum = slider.value; //randNumb(5, 12)
     const retName = [];
     let retpushname = "";
 
@@ -36,6 +46,4 @@ function getthedate() {
     counter += 1;
     document.getElementById("counter").innerText = counter;
 }
-
-
 
