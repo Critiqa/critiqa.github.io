@@ -1,0 +1,15 @@
+body {
+    background-color: coral;
+}
+
+img {
+    border-radius: 15px;
+}
+
+#gallery_id {
+    width: 100%;
+    background-color: antiquewhite;
+    height: 150px;
+    border-radius: 15px;
+}
+
