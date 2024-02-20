@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dice Table</title>
+    <style>
+        /* Basic styling - Adjust this as needed */
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            text-align: center;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <table style="margin: auto;">
+        <tr>
+            <td ><img style="width: 50px;" src="image1x1.png" id="die1" alt=""></td>
+            <td ><img style="width: 50px;" src="image2x1.png" id="die2" alt=""></td>
+            <td ><img style="width: 50px;" src="image3x1.png" id="die3" alt=""></td>
+            <td ><img style="width: 50px;" src="image4x1.png" id="die4" alt=""></td>
+            <td ><img style="width: 50px;" src="image5x1.png" id="die5" alt=""></td>
+            <td ><img style="width: 50px;" src="image6x1.png" id="die6" alt=""></td>
+        </tr>
+    </table>
+<p align="center"><button onclick="rolling()"><h2 id="button">Start</h2></button></p>
+
+<h1 align="center">result:</h1>
+<h2 align="center" style="color:red" id="result">-</h2>
+    
+
+<script src="dice_scr.js"></script>
+</body>
+</html>
