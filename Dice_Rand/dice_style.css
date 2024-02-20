@@ -1,0 +1,30 @@
+body {
+    font-family: Consolas, sans-serif;
+    background-color: cadetblue;
+}
+
+table {
+    border: 5px solid brown;
+    padding: 20px;
+    border-radius: 25px;
+    background-color: antiquewhite;
+}
+
+td {
+    width: 50px;
+    height: 50px;
+
+    text-align: center;
+    font-size: 24px;
+}
+
+#result {
+    color: red;
+    text-align: center;
+}
+
+.text {
+    text-align: center;
+    font-size: 26px;
+}
+
