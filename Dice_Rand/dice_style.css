@@ -28,3 +28,6 @@ td {
     font-size: 26px;
 }
 
+.button {
+    border-radius: 10px;
+}
