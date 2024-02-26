@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Table</title>
+    <link rel="stylesheet" href="dice_style.css">
+</head>
+<body>
+
+    <table style="margin: auto;">
+        <tr>
+            <td><img style="width: 50px;" src="image1x1.png" id="die1" alt=""></td>
+            <td><img style="width: 50px;" src="image2x1.png" id="die2" alt=""></td>
+            <td><img style="width: 50px;" src="image3x1.png" id="die3" alt=""></td>
+            <td><img style="width: 50px;" src="image4x1.png" id="die4" alt=""></td>
+            <td><img style="width: 50px;" src="image5x1.png" id="die5" alt=""></td>
+            <td><img style="width: 50px;" src="image6x1.png" id="die6" alt=""></td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <p class="text"><button onclick="rolling()" class="button"><h2 id="button">Start</h2></button></p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <h1 class="text">Result:</h1>
+                <h2 id="result">-</h2>
+            </td>
+        </tr>
+</table>
+
+<script src="dice_scr.js"></script>
+</body>
+</html>
