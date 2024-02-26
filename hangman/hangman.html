@@ -2,25 +2,12 @@
 <html>
 <head>
   <title>Alphabet Buttons</title>
-  <title>Alphabet Buttons</title>
-  <style>
-    .alphabet-container {
-      text-align: center;
-    }
-
-    .alphabet-button {
-      margin: 5px; /* Adjust spacing between buttons */
-      padding: 8px 12px; /* Adjust button size */
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      background-color: #f0f0f0;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1 style="text-align: center;" id="try">Hangman</h1>
+    
     <div class="word_container">
+        <h1 style="text-align: center;" id="try">Hangman</h1>
         <table style="margin: auto; margin-bottom: 25px">
             <tr>
                 <td id="letter1"> _ </td>
@@ -32,7 +19,7 @@
         </table>
     </div>
     <div class="image_container">
-        <table style="margin: auto; border: 2px solid black; margin-bottom: 25px" >
+        <table style="margin: auto;" >
             <tr>
                 <td>
                     <img id="hang_pic" src="./Images/0.jpg" alt="Hangman picture" style="width: 150px;">
@@ -41,7 +28,7 @@
         </table>
     </div>
     <div class="alphabet-container"></div>
-    <div>
+    <div class="used_container">
         <h2 style="text-align: center;">Used letters</h2>
         <p id="used" style="text-align: center;"></p>
     </div>

@@ -1,0 +1,36 @@
+body {
+    background-color: cadetblue;
+}
+
+.word_container, .used_container{
+    background-color: antiquewhite;
+    width: 400px;
+    margin: auto;
+    border-radius: 25px;
+    border: 2px solid;
+    margin-bottom: 20px
+}
+
+.alphabet-container {
+    text-align: center;
+  }
+
+.alphabet-button {
+    margin: 5px; /* Adjust spacing between buttons */
+    padding: 8px 12px; /* Adjust button size */
+    border: 2px solid #000;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    background-color:antiquewhite;
+    cursor: pointer;
+  }
+
+.image_container {
+    background-color: antiquewhite;
+    width: 200px;
+    margin: auto;
+    border-radius: 15px;
+    border: 2px solid;
+    padding: 10px;
+}
