@@ -19,7 +19,7 @@
   </style>
 </head>
 <body>
-    <h1 style="text-align: center;">Hangman</h1>
+    <h1 style="text-align: center;" id="try">Hangman</h1>
     <div class="word_container">
         <table style="margin: auto; margin-bottom: 25px">
             <tr>
@@ -35,7 +35,7 @@
         <table style="margin: auto; border: 2px solid black; margin-bottom: 25px" >
             <tr>
                 <td>
-                    <img src="/hangman/Images/0.jpg" alt="Hangman picture" style="width: 150px;">
+                    <img id="hang_pic" src="./Images/0.jpg" alt="Hangman picture" style="width: 150px;">
                 </td>
             </tr>
         </table>
@@ -43,7 +43,7 @@
     <div class="alphabet-container"></div>
     <div>
         <h2 style="text-align: center;">Used letters</h2>
-        <p style="text-align: center;"></p>
+        <p id="used" style="text-align: center;"></p>
     </div>
     <script src="script.js">
     </script>
