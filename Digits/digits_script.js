@@ -5,7 +5,12 @@ var number;
 function generate() {
     number = document.getElementById("number_to_be").value;
     number = Number(number);
-    display(number);
+    if (number >= 0 && number <= 9) {
+        display(number);
+    }
+    else {
+        alert("You can only write numbers between 0 and 9!");
+    }
 }
 
 function display(number){
