@@ -48,9 +48,12 @@ var guessWord = words[getRandInt(0, words.length - 1)];
           hang_index++;
           document.getElementById("hang_pic").src = "./Images/" + hang_index + ".jpg";
           document.getElementById("used").innerHTML += guess + ", ";
+          
         }
+        
        }
        if (hang_index == 10) {
         document.getElementById("try").innerHTML = "You lose, he ded. The word was '" + guessWord + "'";
        }
+       document.getElementById("guess").remove();
       }
