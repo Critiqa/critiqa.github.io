@@ -1,11 +1,12 @@
 body {
-    background-color: black;
+    background-color: cadetblue;
     font-family: Consolas, sans-serif;
     color: white;
 }
 
 h1 {
     text-align: center;
+    text-shadow: 10px;
 }
 
 table {
@@ -17,7 +18,18 @@ table {
     text-align: center;
 }
 
-#display {
+.display {
     text-align: center;
     padding-top: 50px;
+    margin: auto;
+    position: absolute; 
+    width: 400px;
+}
+
+#dis1 {
+    left: calc(50% - 133px);
+}
+
+#dis2{
+    left: calc(50% - 266px);
 }
