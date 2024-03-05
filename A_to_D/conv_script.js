@@ -9,8 +9,8 @@ var hour_num_index;
 
 poss_angles = [90, 120, 150, 180, 210, 240, 270, 300, 330, 360];
 
-var mins_text = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55];
-var hours_text = [12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var mins_text = ["00", "05", 10, 15, 20, 25, 30, 35, 40, 45, 50, 55];
+var hours_text = ["12", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11"];
 
 
 function getRandomInt(max) {
@@ -26,7 +26,7 @@ function setDate() {
 
     minsHand.style.transform = `rotate(${min_num}deg)`;
 
-    hourHand.style.transform = `rotate(${hour_num}deg)`;
+    hourHand.style.transform = `rotate(${hour_num + (min_num / 30)}deg)`;
   }
 
   setDate()
