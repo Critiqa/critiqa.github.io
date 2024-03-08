@@ -1,0 +1,34 @@
+#colorrange {
+    width: 80%;
+    margin: auto;
+}
+
+#p-colorrange {
+    text-align: center;
+}
+
+#color-wheel {
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    background: conic-gradient(
+      red, 
+      yellow, 
+      lime, 
+      green, 
+      cyan, 
+      blue, 
+      magenta, 
+      red 
+    );
+  }
+
+  button {
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+  }
+
+  button:active {
+    background-color: darkgray;
+  }
