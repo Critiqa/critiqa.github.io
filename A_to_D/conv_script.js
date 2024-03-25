@@ -26,6 +26,7 @@ function setDate() {
     minsHand.style.transform = `rotate(${min_num}deg)`;
 
     hourHand.style.transform = `rotate(${hour_num + (min_num / 30)}deg)`;
+    document.body.style.backgroundColor = "CadetBlue";
   }
 
   setDate()
@@ -37,8 +38,10 @@ function checkDate() {
 
     if (hourval == hour_num_index && minval == min_num_index) {
         document.getElementById("corr_solution").innerHTML = "Yes!! The time is " + (hours_text[hour_num_index]) + " : " + mins_text[min_num_index] + "!";
+        document.body.style.backgroundColor = "DarkSeaGreen";
     }
     else {
         document.getElementById("corr_solution").innerHTML = "Nope!! The time is " + (hours_text[hour_num_index]) + " : " + mins_text[min_num_index]  + "!";
+        document.body.style.backgroundColor = "IndianRed";
     }
 }
