@@ -156,3 +156,10 @@ button {
 #corr_solution {
   text-align: center;
 }
+
+.button-style {
+  width: 80px;
+  height: 40px;
+  font-size: 17px;
+  font-weight: bold;
+}

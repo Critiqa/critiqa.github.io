@@ -9,7 +9,6 @@
 <body>
     <div id="main-container">
         <h1>Analog to Digital conversion!</h1>
-        <div style="text-align: center;"><button onclick="setDate()">New</button></div>
         <div id="clock-container" class="clock">
             <div class="outer-clock-face"> 
                 <div class="marking marking-one"></div>
@@ -56,8 +55,10 @@
                     <option value="10">50</option>
                     <option value="11">55</option>
                    </select>
-
-                <button onclick="checkDate()">Submit</button>
+                   <p></p>
+                <div style="text-align: center;"><button onclick="checkDate()" class="button-style">Submit</button></div>
+                <p></p>
+                <div style="text-align: center;"><button onclick="setDate()" class="button-style">New</button></div>
         </div>
 
     </div>
