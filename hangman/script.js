@@ -30,7 +30,7 @@ var guessWord = words[getRandInt(0, words.length - 1)];
 
  
       // You'll need to define the checkGuess function 
-      function checkGuess(guess) {
+function checkGuess(guess) {
        if (hang_index != 10){
         index = 1;
         misses = 0;
@@ -56,4 +56,12 @@ var guessWord = words[getRandInt(0, words.length - 1)];
         document.getElementById("try").innerHTML = "You lose, he ded. The word was '" + guessWord + "'";
        }
        document.getElementById("guess").remove();
-      }
+}
+
+function reset() {
+  misses = 0;
+  index = 1;
+  for (let index of guessWord) {
+      document.getElementById("letter" + index).innerHTML = "_";
+    }
+}

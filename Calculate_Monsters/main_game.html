@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Monsters</title>
+    <link rel="stylesheet" href="main_game_style.css">
+</head>
+<body>
+    <section id="header">
+
+    </section>
+    <section id="main-sec">
+        <div id="monster">
+            Monsters will be here I guess.
+        </div>
+        <div id="calculator" class="prevent-select">
+            <div id="calc-upper">
+                <table id="calc-upper-table">
+                    <tr>
+                        <td id="calc-upper-upper">
+                            <p id="calc-upper-upper-p">This will show previous stuff idk yet</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="calc-upper-lower">
+                            <p id="calc-upper-lower-p">Your numbers will appear here</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="calc-lower">
+                <table class="calculator-table">
+                    <tr class="calculator-table-row">
+                        <td class="calculator-table-button" onclick="addnum(7)"> 7 </td>
+                        <td class="calculator-table-button" onclick="addnum(8)"> 8 </td>
+                        <td class="calculator-table-button" onclick="addnum(9)"> 9 </td>
+                        <td class="calculator-table-button calculator-operator"> * </td>
+                    </tr>
+                    <tr class="calculator-row">
+                        <td class="calculator-table-button"> 4 </td>
+                        <td class="calculator-table-button"> 5 </td>
+                        <td class="calculator-table-button"> 6 </td>
+                        <td class="calculator-table-button calculator-operator"> / </td>
+                    </tr>
+                    <tr class="calculator-row">
+                        <td class="calculator-table-button"> 1 </td>
+                        <td class="calculator-table-button"> 2 </td>
+                        <td class="calculator-table-button"> 3 </td>
+                        <td class="calculator-table-button calculator-operator"> + </td>
+                    </tr>
+                    <tr class="calculator-row">
+                        <td class="calculator-table-button"> 0 </td>
+                        <td class="calculator-table-button calculator-clear-button" onclick="clear_res()"> C </td>
+                        <td class="calculator-table-button calculator-operator"> = </td>
+                        <td class="calculator-table-button calculator-operator"> - </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="main_game_js.js"></script>
+</body>
+</html>
