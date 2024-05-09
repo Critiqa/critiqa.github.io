@@ -27,6 +27,17 @@ body {
     border-radius: 8px;
 }
 
+#monster {
+    text-align: center;
+}
+
+#monster-pic {
+    width: 35%;
+    padding:10px;
+    margin: auto;
+    
+}
+
 #calc-upper {
     padding:10px 0px 10px;
     height: 100px;
