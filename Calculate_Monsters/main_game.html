@@ -11,19 +11,33 @@
 
     </section>
     <section id="main-sec">
+        <div id="monster-health">
+            <table align="center" style="width: 100%;">
+                <tr>
+                    <td style="text-align: center;"><img src="pixil-gif-drawing.gif" alt="" class="beating-heart" id="monster-heart1"></td>
+                    <td style="text-align: center;"><img src="pixil-gif-drawing.gif" alt="" class="beating-heart" id="monster-heart2"></td>
+                    <td style="text-align: center;"><img src="pixil-gif-drawing.gif" alt="" class="beating-heart" id="monster-heart3"></td>
+                    <td style="text-align: center;"><img src="pixil-gif-drawing.gif" alt="" class="beating-heart" id="monster-heart4"></td>
+                    <td style="text-align: center;"><img src="pixil-gif-drawing.gif" alt="" class="beating-heart" id="monster-heart5"></td>
+                </tr>
+            </table>
+        </div>
         <div id="monster">
              <img src="monst.png" id="monster-pic" alt="A pixelated 16 bit monster image">
         </div>
         <div id="calculator" class="prevent-select">
             <div id="calc-upper">
-                <table id="calc-upper-table">
+                <table id="calc-upper-table" width="100%">
                     <tr>
-                        <td id="calc-upper-upper">
+                        <td id="calc-upper-upper" colspan="2">
                             <p id="calc-upper-upper-p">This will show previous stuff idk yet</p>
                         </td>
                     </tr>
                     <tr>
-                        <td id="calc-upper-lower">
+                        <td id="calc-upper-lower-negative" style="width: 5%;">
+                            <p id="calc-upper-lower-negative-p"></p>
+                        </td>
+                        <td id="calc-upper-lower" style="width: 95%;">
                             <p id="calc-upper-lower-p">Your numbers will appear here</p>
                         </td>
                     </tr>
@@ -53,7 +67,18 @@
                         <td class="calculator-table-button" onclick="addnum(0)"> 0 </td>
                         <td class="calculator-table-button calculator-clear-button" onclick="clear_res()"> C </td>
                         <td class="calculator-table-button calculator-operator" onclick="check_result()"> = </td>
-                        <td class="calculator-table-button calculator-operator"> - </td>
+                        <td class="calculator-table-button calculator-operator" onclick="minus()"> - </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="player-health">
+                <table align="center" style="width: 100%;" >
+                    <tr>
+                        <td style="text-align: center;"><img src="pixil-gif-drawing.gif" alt="" class="beating-heart" id="player-heart1"></td>
+                        <td style="text-align: center;"><img src="pixil-gif-drawing.gif" alt="" class="beating-heart" id="player-heart2"></td>
+                        <td style="text-align: center;"><img src="pixil-gif-drawing.gif" alt="" class="beating-heart" id="player-heart3"></td>
+                        <td style="text-align: center;"><img src="pixil-gif-drawing.gif" alt="" class="beating-heart" id="player-heart4"></td>
+                        <td style="text-align: center;"><img src="pixil-gif-drawing.gif" alt="" class="beating-heart" id="player-heart5"></td>
                     </tr>
                 </table>
             </div>

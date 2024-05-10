@@ -98,3 +98,11 @@ body {
 .calculator-clear-button:active{
     background-color: rgb(228, 146, 146);
 }
+
+.beating-heart {
+    width: 50px;
+}
+
+#calc-upper-lower-negative-p {
+    font-size: 25px;
+}
