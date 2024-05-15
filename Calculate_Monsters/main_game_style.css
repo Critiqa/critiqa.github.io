@@ -45,18 +45,20 @@ body {
 }
 
 #monster-gen{
-    width: 400px;
+    width: 420px;
     margin: auto;
+    border: 5px solid;
+    border-radius: 15px;
+    background-image: url();
 }
 
 #monster-gen td{
-    border: 1px solid grey;
     border-collapse: collapse;
+    width: 100px;
 }
 
-#monster-gen-stats {
-    width: 100px;
-    
+.monster-part{
+    width: 100%;
 }
 
 #calc-upper {

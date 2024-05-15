@@ -48,6 +48,7 @@ function clear_res(){
     typed_num = "";
     document.getElementById("calc-upper-table").style.background = "midnightblue";
     document.getElementById("calc-upper-lower-negative-p").innerHTML = "";
+    is_minus = false;
 }
 
 /*This function creates a visual representation of a minus character, and also changes 
@@ -88,6 +89,7 @@ function check_result() {
             monst_eq_result = monst_eq_one - monst_eq_two;
             break
     }
+    monst_eq_result = Number(monst_eq_result);
 
     calc_res = Number(typed_num);
 
@@ -98,20 +100,24 @@ function check_result() {
     /*In case of a correct response, the enemy life goes down by one.
     Background colour of the output screen changes to green (might change to darker shade)
     Correct text is written out. */
-    if ((calc_res == monst_eq_result)){
+    if (calc_res == monst_eq_result){
         document.getElementById("calc-upper-lower-p").innerHTML = "Correct";
         document.getElementById("calc-upper-table").style.background = "lightgreen";
-        document.getElementById("monster-heart"+m_image_count).src = "pixil-gif-drawing2.png";
-        m_image_count = m_image_count - 1;
+        if (!(m_image_count == 0)){
+            document.getElementById("monster-heart"+m_image_count).src = "pixil-gif-drawing2.png";
+            m_image_count = m_image_count - 1;
+        }
         /*Generate a new problem after this one has been solved */
-        
-        setTimeout(problemGen(), 10000);
-        setTimeout(clear_res(), 10000);
+        problemGen();
+        clear_res();
     }
     else{
         document.getElementById("calc-upper-table").style.background = "salmon";
-        document.getElementById("calc-upper-upper-p").innerHTML = monst_eq_result;
-        document.getElementById("player-heart"+p_image_count).src = "pixil-gif-drawing2.png";
-        p_image_count = p_image_count - 1;
+        document.getElementById("calc-upper-upper-p").innerHTML = "Result: " + monst_eq_result + ", Typed what seen:" + typed_num + (monst_eq_result == typed_num);
+        
+        if (!(p_image_count == 0)){
+            document.getElementById("player-heart"+p_image_count).src = "pixil-gif-drawing2.png";
+            p_image_count = p_image_count - 1;
+        }
     }
 }
