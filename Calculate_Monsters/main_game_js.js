@@ -23,15 +23,15 @@ let calc_res;
 let p_image_count = 5;
 let m_image_count = 5; 
 
-/*Problem generation */
+/*Problem generation and output*/
 function problemGen(){
 
     monst_eq_one = getRndInteger(1, 50);
     monst_eq_two = getRndInteger(1, 50);
     monst_eq_operator_list = ["+", "-", "*", "/"]; 
-    monst_eq_chosen_op = monst_eq_operator_list[getRndInteger(0, 2)]
+    monst_eq_chosen_op = monst_eq_operator_list[getRndInteger(0, 2)];
 
-    document.getElementById("calc-upper-upper-p").innerHTML = monst_eq_one + " " + monst_eq_chosen_op + " " + monst_eq_two;
+    document.getElementById("calc-upper-upper-p").innerHTML ="The problem is: " + monst_eq_one + " " + monst_eq_chosen_op + " " + monst_eq_two;
 }
 
 /*First problem generation */
@@ -39,7 +39,8 @@ problemGen();
 
 /* Operator strings stored in a list. Later on I might make it so that the strigns
 later on are not checked, but the index is stored, for easier functionality. */
-let op_list = ["+", "*", "-", "/"];
+
+let op_list = ["+", "*", "-", "/"]; /*This might not be used anywhere now, check it */
 
 
 /* This function resets the input area. This can be used to redo the input, in case of mistype*/
