@@ -4,7 +4,6 @@
     --calc-bg-color: midnightblue;
     --calc-bg-font-color: ghostwhite;
     --calc-button-hover-color: rgb(176 176 176);
-
 }
 
 @font-face {
@@ -42,6 +41,21 @@ body {
     width: 35%;
     padding:10px;
     margin: auto;
+    
+}
+
+#monster-gen{
+    width: 400px;
+    margin: auto;
+}
+
+#monster-gen td{
+    border: 1px solid grey;
+    border-collapse: collapse;
+}
+
+#monster-gen-stats {
+    width: 100px;
     
 }
 

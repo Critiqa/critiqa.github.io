@@ -8,7 +8,9 @@
 </head>
 <body>
     <section id="header">
-
+        <h1 align="center">
+            Monster Math
+        </h1>
     </section>
     <section id="main-sec">
         <div id="monster-health">
@@ -23,7 +25,22 @@
             </table>
         </div>
         <div id="monster">
-             <img src="monst.png" id="monster-pic" alt="A pixelated 16 bit monster image">
+             <table id="monster-gen">
+                <tr>
+                    <td>nada</td>
+                    <td id="monster-gen-head"> head</td>
+                    <td>nada</td>
+                    <td rowspan="3" id="monster-gen-stats"></td>
+                </tr>
+                <tr>
+                    <td rowspan="2" id="monster-gen-l-arm">left arm</td>
+                    <td></td>
+                    <td rowspan="2" id="monster-gen-r-arm">right arm</td>
+                </tr>
+                <tr>
+                    <td id="monster-gen-legs">legs</td>
+                </tr>
+             </table>
         </div>
         <div id="calculator" class="prevent-select">
             <div id="calc-upper">
