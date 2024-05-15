@@ -45,8 +45,8 @@ body {
 }
 
 #monster-gen{
-    width: 420px;
-    margin: auto;
+    width: 300px;
+    margin-left: 15px;
     border: 5px solid;
     border-radius: 10px;
     background-image: url('bg.png');
@@ -60,7 +60,7 @@ body {
 }
 
 .monster-part{
-    width: 100%;
+    width: 50%;
 }
 
 #calc-upper {
