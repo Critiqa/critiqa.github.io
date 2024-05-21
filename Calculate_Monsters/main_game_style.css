@@ -132,3 +132,21 @@ body {
 #calc-upper-lower-negative-p {
     font-size: 25px;
 }
+
+/* Difficulty settings*/
+
+#difficulty-settings-table{
+    width: 100%;
+    text-align: center;   
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+.difficulty-settings-table-button {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: var(--main-bg-color);
+    border: 3px solid gray;
+    font-size: 20px;
+    width: 33%;
+}

@@ -20,7 +20,6 @@ let calc_res;
 
 /* Image variables */
 
-let p_image_count = 5;
 let m_image_count = 5; 
 
 /*Problem generation and output*/
@@ -115,10 +114,6 @@ function check_result() {
     else{
         document.getElementById("calc-upper-table").style.background = "salmon";
         document.getElementById("calc-upper-upper-p").innerHTML = "Result: " + monst_eq_result + ", Typed what seen:" + typed_num + (monst_eq_result == typed_num);
-        
-        if (!(p_image_count == 0)){
-            document.getElementById("player-heart"+p_image_count).src = "pixil-gif-drawing2.png";
-            p_image_count = p_image_count - 1;
-        }
+
     }
 }
