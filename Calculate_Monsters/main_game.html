@@ -14,13 +14,14 @@
     </section>
     <section id="main-sec">
         <div id="monster-health">
-            <table align="center" style="width: 100%;">
+            <table id="monster-health-table">
                 <tr>
-                    <td style="text-align: center;"><img src="pixil-gif-drawing.gif" alt="" class="beating-heart" id="monster-heart1"></td>
-                    <td style="text-align: center;"><img src="pixil-gif-drawing.gif" alt="" class="beating-heart" id="monster-heart2"></td>
-                    <td style="text-align: center;"><img src="pixil-gif-drawing.gif" alt="" class="beating-heart" id="monster-heart3"></td>
-                    <td style="text-align: center;"><img src="pixil-gif-drawing.gif" alt="" class="beating-heart" id="monster-heart4"></td>
-                    <td style="text-align: center;"><img src="pixil-gif-drawing.gif" alt="" class="beating-heart" id="monster-heart5"></td>
+                    <td>
+                        <p>Monster name generator here: </p>
+                    </td>
+                    <td>
+                        <p>And also health!</p>
+                    </td>
                 </tr>
             </table>
         </div>
@@ -75,7 +76,7 @@
                         <td class="calculator-table-button" onclick="addnum(4)"> 4 </td>
                         <td class="calculator-table-button" onclick="addnum(5)"> 5 </td>
                         <td class="calculator-table-button" onclick="addnum(6)"> 6 </td>
-                        <td class="calculator-table-button calculator-operator"> / </td>
+                        <td class="calculator-table-button calculator-operator" onclick="problemGen()"> / </td>
                     </tr>
                     <tr class="calculator-row">
                         <td class="calculator-table-button" onclick="addnum(1)"> 1 </td>
@@ -94,9 +95,9 @@
             <div id="difficulty-settings">
                 <table id="difficulty-settings-table">
                     <tr>
-                        <td class="difficulty-settings-table-button">Easy</td>
-                        <td class="difficulty-settings-table-button">Normal</td>
-                        <td class="difficulty-settings-table-button">Hard</td>
+                        <td class="difficulty-settings-table-button" onclick="select_dif(1)">Easy</td>
+                        <td class="difficulty-settings-table-button" onclick="select_dif(2)">Normal</td>
+                        <td class="difficulty-settings-table-button" onclick="select_dif(3)">Hard</td>
                     </tr>
                     <tr>
                         <td colspan="3" style="padding: 0px; margin: 0px; height: 0px;">

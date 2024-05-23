@@ -41,11 +41,10 @@ body {
     width: 35%;
     padding:10px;
     margin: auto;
-    
 }
 
 #monster-gen{
-    width: 300px;
+    width: 420px;
     margin-left: 15px;
     border: 5px solid;
     border-radius: 10px;
@@ -101,11 +100,11 @@ body {
 
 }
 
-.calculator-table-button:hover {
+.calculator-table-button:hover, .difficulty-settings-table-button:hover {
     background-color: var(--calc-button-hover-color);
 }
 
-.calculator-table-button:active {
+.calculator-table-button:active, .difficulty-settings-table-button:active {
     background-color: var(--main-bg-color);
 }
 
@@ -124,6 +123,8 @@ body {
 .calculator-clear-button:active{
     background-color: rgb(228, 146, 146);
 }
+
+
 
 .beating-heart {
     width: 50px;

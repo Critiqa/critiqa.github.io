@@ -8,7 +8,7 @@ function getRndInteger(min, max) {
   }
 
 /* Monster variables */
-monst_diff = "normal";
+
 let monst_eq_one;
 let monst_eq_two;
 let monst_eq_operator_list;
@@ -21,16 +21,35 @@ let calc_res;
 /* Image variables */
 
 let m_image_count = 5; 
+let problem_number_min = 1;
+let problem_number_max = 50;
 
 /*Problem generation and output*/
 function problemGen(){
 
-    monst_eq_one = getRndInteger(1, 50);
-    monst_eq_two = getRndInteger(1, 50);
+    monst_eq_one = getRndInteger(problem_number_min, problem_number_max);
+    monst_eq_two = getRndInteger(problem_number_min, problem_number_max);
     monst_eq_operator_list = ["+", "-", "*", "/"]; 
     monst_eq_chosen_op = monst_eq_operator_list[getRndInteger(0, 2)];
 
     document.getElementById("calc-upper-upper-p").innerHTML ="The problem is: " + monst_eq_one + " " + monst_eq_chosen_op + " " + monst_eq_two;
+}
+
+function select_dif(dif){
+    switch(dif){
+        case 1: /* This will be the easy difficulty */
+            problem_number_min = 1;
+            problem_number_max = 50;
+            break
+        case 2: /* This will be the normal difficulty */
+            problem_number_min = 0 - getRndInteger(1, 10);
+            problem_number_max = 150;
+            break
+        case 3:
+            problem_number_min = 0 - getRndInteger(50, 150);
+            problem_number_max = 1500;
+            break
+    }
 }
 
 /*First problem generation */
@@ -68,6 +87,7 @@ function minus() {
 and adds it to the end of the string. There is a restriction, which does not let any other
 characters to pass, if the length of the string is already 29. This is to preserve the 
 space in the calculator, so the whole thing does not blow up, and also for my sanity to remain. */
+
 function addnum(number){
     if (typed_num.length < 29){
         typed_num = typed_num + String(number);
@@ -80,6 +100,7 @@ input value. The checking happens when the button is pressed, and is based on th
 mathematical operator. 
 This will bite me back, when I would like to create more complex generations, but now it works.
 The checking results and answer phase is in here too */
+
 function check_result() {
     switch(monst_eq_chosen_op){
         case "+":
@@ -94,12 +115,15 @@ function check_result() {
     calc_res = Number(typed_num);
 
     /*Based on the minus bool, it will multiply the input so it becomes a negative number. This is done directly after the answer calculation, and before the result output */
+
     if (is_minus){
         calc_res = calc_res * -1
     }
+
     /*In case of a correct response, the enemy life goes down by one.
     Background colour of the output screen changes to green (might change to darker shade)
     Correct text is written out. */
+
     if (calc_res == monst_eq_result){
         document.getElementById("calc-upper-lower-p").innerHTML = "Correct";
         document.getElementById("calc-upper-table").style.background = "lightgreen";
@@ -107,13 +131,15 @@ function check_result() {
             document.getElementById("monster-heart"+m_image_count).src = "pixil-gif-drawing2.png";
             m_image_count = m_image_count - 1;
         }
+
         /*Generate a new problem after this one has been solved */
+
         problemGen();
         clear_res();
     }
+
     else{
         document.getElementById("calc-upper-table").style.background = "salmon";
         document.getElementById("calc-upper-upper-p").innerHTML = "Result: " + monst_eq_result + ", Typed what seen:" + typed_num + (monst_eq_result == typed_num);
-
     }
 }
