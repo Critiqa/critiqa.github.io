@@ -35,6 +35,7 @@ function problemGen(){
     document.getElementById("calc-upper-upper-p").innerHTML ="The problem is: " + monst_eq_one + " " + monst_eq_chosen_op + " " + monst_eq_two;
 }
 
+/*This function handles difficulty selection. Difficulty is meant by extendind the random range. */
 function select_dif(dif){
     switch(dif){
         case 1: /* This will be the easy difficulty */
@@ -54,12 +55,6 @@ function select_dif(dif){
 
 /*First problem generation */
 problemGen();
-
-/* Operator strings stored in a list. Later on I might make it so that the strigns
-later on are not checked, but the index is stored, for easier functionality. */
-
-let op_list = ["+", "*", "-", "/"]; /*This might not be used anywhere now, check it */
-
 
 /* This function resets the input area. This can be used to redo the input, in case of mistype*/
 function clear_res(){
@@ -127,13 +122,10 @@ function check_result() {
     if (calc_res == monst_eq_result){
         document.getElementById("calc-upper-lower-p").innerHTML = "Correct";
         document.getElementById("calc-upper-table").style.background = "lightgreen";
-        if (!(m_image_count == 0)){
-            document.getElementById("monster-heart"+m_image_count).src = "pixil-gif-drawing2.png";
-            m_image_count = m_image_count - 1;
-        }
+
+        /*A timeout is needed here so the green bg can be seen. */
 
         /*Generate a new problem after this one has been solved */
-
         problemGen();
         clear_res();
     }
