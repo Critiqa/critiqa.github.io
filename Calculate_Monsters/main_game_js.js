@@ -18,11 +18,34 @@ let monst_eq_result;
 let is_minus = false;
 let calc_res;
 
-/* Image variables */
+/*Monster Name generation function */
+const consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"];
+const vowels = ["a", "e", "i", "o", "u"];
+let monNameLength;
+let monNameRemain;
+let monName = "";
 
-let m_image_count = 5; 
-let problem_number_min = 1;
-let problem_number_max = 50;
+function monNameGen(){
+    monNameLength = getRndInteger(5, 9);
+    monNameRemain = monNameLength;
+    while (monNameRemain >= 3){
+        monName += consonants[getRndInteger(0, consonants.length - 1)];
+        monName += vowels[getRndInteger(0, vowels.length - 1)];
+        monName += consonants[getRndInteger(0, consonants.length - 1)];
+
+        monNameRemain -= 3;
+    }
+    while (monNameRemain >= 2){
+        monName += vowels[getRndInteger(0, vowels.length - 1)];
+        monName += consonants[getRndInteger(0, consonants.length - 1)];
+        monNameRemain -= 2;
+    }
+    monName += vowels[getRndInteger(0, vowels.length - 1)];
+    monName = 
+    document.getElementById("monster-name").innerHTML = monName;
+}
+
+monNameGen() /*Damn it actually works*/
 
 /*Problem generation and output*/
 function problemGen(){
