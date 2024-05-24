@@ -18,6 +18,9 @@ let monst_eq_result;
 let is_minus = false;
 let calc_res;
 
+let problem_number_min = 1;
+let problem_number_max = 50;
+
 /*Monster Name generation function */
 const consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"];
 const vowels = ["a", "e", "i", "o", "u"];
@@ -41,7 +44,6 @@ function monNameGen(){
         monNameRemain -= 2;
     }
     monName += vowels[getRndInteger(0, vowels.length - 1)];
-    monName = 
     document.getElementById("monster-name").innerHTML = monName;
 }
 
