@@ -1,3 +1,7 @@
+/*I am trying my best to comment everything, but I do not want to overcomment either.
+Fun little project, I hope it will come to fruition.
+It's obviously not ready yet. */
+
 let typed_num;
 typed_num = "";
 
@@ -50,6 +54,12 @@ function monNameGen(){
 }
 
 monNameGen() /*Damn it actually works*/
+
+function monHealthGen(){
+    document.getElementById("monster-health").innerHTML = "Health: " + monstHealth;
+}
+
+monHealthGen();
 
 /*Problem generation and output*/
 function problemGen(){
@@ -151,6 +161,8 @@ function check_result() {
 
     if (calc_res == monst_eq_result){
         clear_res();
+        monstHealth -= 1;
+        monHealthGen();
         document.getElementById("calc-upper-lower-p").innerHTML = "Correct";
         document.getElementById("calc-upper-table").style.background = "lightgreen";
 
