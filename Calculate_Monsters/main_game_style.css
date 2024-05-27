@@ -37,6 +37,24 @@ body {
     text-align: center;
 }
 
+#monster-name {
+    text-align: center;
+}
+
+#monster-health {
+    text-align: center;
+
+}
+
+#monster-info-table {
+    margin: auto;
+    width: 95%;
+}
+
+#monster-info-table td{
+    width: 50%;
+}
+
 #monster-pic {
     width: 35%;
     padding:10px;
@@ -44,10 +62,10 @@ body {
 }
 
 #monster-gen{
-    width: 420px;
-    margin-left: 15px;
+    width: 430px;
+    margin-left: 10px;
     border: 5px solid;
-    border-radius: 10px;
+    /*border-radius:10px;*/
     background-image: url('bg.png');
     background-size: cover;
 }

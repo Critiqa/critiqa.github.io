@@ -28,6 +28,8 @@ let monNameLength;
 let monNameRemain;
 let monName = "";
 
+let monstHealth = 5;
+
 function monNameGen(){
     monNameLength = getRndInteger(5, 9);
     monNameRemain = monNameLength;
@@ -44,7 +46,7 @@ function monNameGen(){
         monNameRemain -= 2;
     }
     monName += vowels[getRndInteger(0, vowels.length - 1)];
-    document.getElementById("monster-name").innerHTML = monName;
+    document.getElementById("monster-name").innerHTML = "Name: " + monName;
 }
 
 monNameGen() /*Damn it actually works*/
@@ -54,8 +56,8 @@ function problemGen(){
 
     monst_eq_one = getRndInteger(problem_number_min, problem_number_max);
     monst_eq_two = getRndInteger(problem_number_min, problem_number_max);
-    monst_eq_operator_list = ["+", "-", "*", "/"]; 
-    monst_eq_chosen_op = monst_eq_operator_list[getRndInteger(0, 2)];
+    monst_eq_operator_list = ["+", "-"]; 
+    monst_eq_chosen_op = monst_eq_operator_list[getRndInteger(0, monst_eq_operator_list.length - 1)];
 
     document.getElementById("calc-upper-upper-p").innerHTML ="The problem is: " + monst_eq_one + " " + monst_eq_chosen_op + " " + monst_eq_two;
 }
@@ -66,14 +68,17 @@ function select_dif(dif){
         case 1: /* This will be the easy difficulty */
             problem_number_min = 1;
             problem_number_max = 50;
+            monstHealth = 5;
             break
         case 2: /* This will be the normal difficulty */
             problem_number_min = 0 - getRndInteger(1, 10);
             problem_number_max = 150;
+            monstHealth = 8;
             break
         case 3:
             problem_number_min = 0 - getRndInteger(50, 150);
             problem_number_max = 1500;
+            monstHealth = 5;
             break
     }
 }
@@ -145,18 +150,23 @@ function check_result() {
     Correct text is written out. */
 
     if (calc_res == monst_eq_result){
+        clear_res();
         document.getElementById("calc-upper-lower-p").innerHTML = "Correct";
         document.getElementById("calc-upper-table").style.background = "lightgreen";
 
         /*A timeout is needed here so the green bg can be seen. */
-
-        /*Generate a new problem after this one has been solved */
-        problemGen();
-        clear_res();
+        setTimeout(function() {
+            problemGen();
+            clear_res();
+        }, 1000)
     }
 
     else{
         document.getElementById("calc-upper-table").style.background = "salmon";
-        document.getElementById("calc-upper-upper-p").innerHTML = "Result: " + monst_eq_result + ", Typed what seen:" + typed_num + (monst_eq_result == typed_num);
+        document.getElementById("calc-upper-lower-p").innerHTML = "Wrong answer, try again";
+        setTimeout(function() {
+            problemGen();
+            clear_res();
+        }, 1000)
     }
 }
