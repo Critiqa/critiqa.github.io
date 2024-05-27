@@ -107,6 +107,10 @@ function explain(dif) {
     }
 }
 
+function explainReset() {
+    document.getElementById("diff-explain").innerHTML = "Explanation";
+}
+
 /*First problem generation */
 problemGen();
 
