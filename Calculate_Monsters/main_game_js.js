@@ -93,6 +93,20 @@ function select_dif(dif){
     }
 }
 
+function explain(dif) {
+    switch(dif){
+        case 1:
+            document.getElementById("diff-explain").innerHTML = "Lowest possible number is " + 1 + " and the highest possible number is " + 50;
+            break
+        case 2:
+            document.getElementById("diff-explain").innerHTML = "Lowest possible number is " + -10 + " and the highest possible number is " + 150;
+            break
+        case 3:
+            document.getElementById("diff-explain").innerHTML = "Lowest possible number is " + -150 + " and the highest possible number is " + 1500;
+            break
+    }
+}
+
 /*First problem generation */
 problemGen();
 

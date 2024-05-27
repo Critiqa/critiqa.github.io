@@ -81,16 +81,16 @@ body {
 }
 
 #calc-upper {
-    padding:10px 0px 20px;
+    padding:5px 0px 15px;
     height: 100px;
 }
 
 #calc-upper-table {
     background-color: var(--calc-bg-color);
     color: var(--calc-bg-font-color);
-    width: 95%;
+    width: 430px;
     margin: auto;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
     text-align: right;
 }
 
