@@ -5,7 +5,7 @@ It's obviously not ready yet. */
 let typed_num;
 typed_num = "";
 
-let prevDif = 1;
+
 
 /*Just a basic random number generator, which has a max and min threshold.
 Will be useful when creating difficulty modes, as those thresholds will be variables. */
@@ -73,6 +73,11 @@ function problemGen(){
 
     document.getElementById("calc-upper-upper-p").innerHTML ="The problem is: " + monst_eq_one + " " + monst_eq_chosen_op + " " + monst_eq_two;
 }
+
+/*This will hold the previous selected difficulty
+This is here to reduce spamming the difficulty buttons 
+1 by default, as the default difficulty is Easy*/
+let prevDif = 1;
 
 /*This function handles difficulty selection. Difficulty is meant by extendind the random range. */
 function select_dif(dif){
@@ -208,7 +213,6 @@ function check_result() {
         document.getElementById("calc-upper-table").style.background = "salmon";
         document.getElementById("calc-upper-lower-p").innerHTML = "Wrong answer, try again";
         setTimeout(function() {
-            problemGen();
             clear_res();
         }, 1000)
     }
