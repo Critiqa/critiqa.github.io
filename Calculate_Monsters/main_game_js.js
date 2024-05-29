@@ -5,6 +5,8 @@ It's obviously not ready yet. */
 let typed_num;
 typed_num = "";
 
+let prevDif = 1;
+
 /*Just a basic random number generator, which has a max and min threshold.
 Will be useful when creating difficulty modes, as those thresholds will be variables. */
 function getRndInteger(min, max) {
@@ -74,23 +76,33 @@ function problemGen(){
 
 /*This function handles difficulty selection. Difficulty is meant by extendind the random range. */
 function select_dif(dif){
+    if (dif == prevDif){
+        return;
+    }
     switch(dif){
+        
         case 1: /* This will be the easy difficulty */
             problem_number_min = 1;
             problem_number_max = 50;
             monstHealth = 5;
+            prevDif = 1;
             break
         case 2: /* This will be the normal difficulty */
             problem_number_min = 0 - getRndInteger(1, 10);
             problem_number_max = 150;
             monstHealth = 8;
+            prevDif = 2;
             break
         case 3:
             problem_number_min = 0 - getRndInteger(50, 150);
             problem_number_max = 1500;
             monstHealth = 5;
+            prevDif = 3;
             break
     }
+    
+    clear_res();
+    problemGen();
 }
 
 function explain(dif) {
@@ -163,13 +175,14 @@ function check_result() {
             monst_eq_result = monst_eq_one - monst_eq_two;
             break
     }
+
     monst_eq_result = Number(monst_eq_result);
 
     calc_res = Number(typed_num);
 
     /*Based on the minus bool, it will multiply the input so it becomes a negative number. This is done directly after the answer calculation, and before the result output */
 
-    if (is_minus){
+    if (is_minus) {
         calc_res = calc_res * -1
     }
 
@@ -177,7 +190,7 @@ function check_result() {
     Background colour of the output screen changes to green (might change to darker shade)
     Correct text is written out. */
 
-    if (calc_res == monst_eq_result){
+    if (calc_res == monst_eq_result) {
         clear_res();
         monstHealth -= 1;
         monHealthGen();
@@ -191,7 +204,7 @@ function check_result() {
         }, 1000)
     }
 
-    else{
+    else {
         document.getElementById("calc-upper-table").style.background = "salmon";
         document.getElementById("calc-upper-lower-p").innerHTML = "Wrong answer, try again";
         setTimeout(function() {
