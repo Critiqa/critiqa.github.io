@@ -27,7 +27,7 @@ let calc_res;
 let problem_number_min = 1;
 let problem_number_max = 50;
 
-/*Monster Name generation function */
+/*Monster Name and look generation function */
 const consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"];
 const vowels = ["a", "e", "i", "o", "u"];
 let monNameLength;
@@ -53,6 +53,9 @@ function monNameGen(){
     }
     monName += vowels[getRndInteger(0, vowels.length - 1)];
     document.getElementById("monster-name").innerHTML = "Name: " + monName;
+
+    /*Monster look generation */
+    document.getElementById("monster-gen-mouth").src = "Monster-parts\\monster-mouths\\mouth" + getRndInteger(1, 5) + ".gif";
 }
 
 monNameGen() /*Damn it actually works*/
