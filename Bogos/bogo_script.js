@@ -39,7 +39,7 @@ function start(){
 }
 
 function start_automat(){
-    doing = setInterval(start, 100);
+    doing = setInterval(start, 1);
 }
 
 function stop_automat(){
