@@ -35,13 +35,18 @@ function start(){
         }
         if (checker == 10){
             clearInterval(doing);
+            document.getElementById("results").innerHTML = "This sorting took " + (Number(counter / 1000) + " seconds to complete.")
         }
 }
 
 function start_automat(){
     doing = setInterval(start, 1);
+    document.getElementById("automata").onclick = function() {stop_automat()} ;
+    document.getElementById("automata").innerHTML = "Stop Auto";
 }
 
 function stop_automat(){
     clearInterval(doing);
+    document.getElementById("automata").onclick = function() {start_automat()} ;
+    document.getElementById("automata").innerHTML = "Automatic";
 }
