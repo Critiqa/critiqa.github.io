@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Exam Countdown</title>
+    <link rel="stylesheet" href="AS_exam_cd.css">
+</head>
+<body>
+    <header>
+        <h1>AS level Exam Timer for IT</h1>
+    </header>
+    <main>
+        <h2>Practical - Paper 2</h2>
+        <p id="countdown_p"></p>
+        <p>April 16, 2025</p>
+        <h2>Theory - Paper 1</h2>
+        <p id="countdown_t"></p>
+        <p>May 9, 2025</p>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+<script>
+    //23/04/2025
+    let countDownDate_p = new Date("April 16, 2025 00:00:00").getTime();
+    let update_cdP = setInterval( function() {
+        var now_p = new Date().getTime();
+        var distance_p = countDownDate_p - now_p;
+
+        var days_p = Math.floor(distance_p / (1000 * 60 * 60 * 24));
+        var hours_p = Math.floor((distance_p % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes_p = Math.floor((distance_p % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds_p = Math.floor((distance_p % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown_p").innerHTML = days_p + "d " + hours_p + "h " + minutes_p + "m " + seconds_p + "s";
+    })
+
+    let countDownDate_t = new Date("May 9, 2025 09:00:00").getTime();
+
+    let update_cdT = setInterval( function() {
+        var now_t = new Date().getTime();
+        var distance_t = countDownDate_t - now_t;
+
+        var days_t = Math.floor(distance_t / (1000 * 60 * 60 * 24));
+        var hours_t = Math.floor((distance_t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes_t = Math.floor((distance_t % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds_t = Math.floor((distance_t % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown_t").innerHTML = days_t + "d " + hours_t + "h " + minutes_t + "m " + seconds_t + "s";
+    })
+</script>
+</html>
