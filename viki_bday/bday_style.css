@@ -1,0 +1,159 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7e7ce; /* Light background color */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the start at the top */
+    min-height: 100vh;
+    padding-top: 20px; /* Add some padding at the top */
+}
+
+.birthday-message {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.birthday-message h1 {
+    color: #d65a31; /* Festive color for heading */
+    text-shadow: 2px 2px 3px #f9aa33;
+}
+
+.cake-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px; /* Space below the cake */
+}
+
+.cake {
+    position: relative;
+}
+
+.cake-layer {
+    background-color: #a52a2a; /* Brown cake color */
+    border-radius: 10px;
+    border: 2px solid #8b0000; /* Darker border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    margin-bottom: 15px;
+    position: relative; /* For frosting effect */
+}
+
+.cake-layer::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 0;
+    right: 0;
+    height: 15px;
+    background-color: #f0f8ff; /* Frosting color */
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.cake-layer-top {
+    width: 120px;
+    height: 40px;
+}
+
+.cake-layer-middle {
+    width: 160px;
+    height: 50px;
+}
+
+.cake-layer-bottom {
+    width: 200px;
+    height: 60px;
+}
+
+.candles-container {
+    position: absolute;
+    top: 5px; /* Adjust to position candles on top */
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Distribute candles evenly */
+    align-items: flex-start; /* Align candles to the top of container */
+    padding: 5px;
+}
+
+/* Generate 30 candles using CSS */
+.candles-container::before {
+    content: '';
+    display: block;
+    width: 100%; /* Take full width to distribute candles in rows */
+    height: 0;
+}
+
+.candles-container::after {
+    content: '';
+    display: block;
+    width: 100%; /* Take full width to distribute candles in rows */
+    height: 0;
+}
+
+
+/* Style for individual candle */
+.candles-container::before,
+.candles-container::after {
+    counter-reset: candles-counter 0; /* Initialize counter */
+}
+
+.candles-container::before {
+    /* Empty pseudo element to use counter for candles */
+    content: repeating-linear-gradient(90deg, transparent, transparent 5%,
+             rgba(255, 215, 0, 1) 5%, rgba(255, 215, 0, 1) 7%, transparent 7%, transparent 10%) ; /* Gold candle */
+    width: 2px;
+    height: 20px;
+    background-size: 10px 100%;
+    margin: 5px;
+    border-radius: 2px 2px 0 0;
+    position: relative;
+    counter-increment: candles-counter;
+    order: calc(counter(candles-counter)); /* Order for flex positioning */
+}
+
+.candles-container::before::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -2px;
+    width: 6px;
+    height: 6px;
+    background-color: #ffa07a; /* Flame color */
+    border-radius: 50%;
+    animation: flicker 0.5s infinite alternate;
+}
+
+
+/* Apply candle styles to the first 30 pseudo-elements */
+.candles-container::before:nth-child(-n+30) {
+    /* Apply candle styles to the first 30 elements */
+    display: block; /* Make them visible */
+}
+.candles-container::before:nth-child(n+31) {
+    display: none; /* Hide elements after the 30th */
+}
+
+
+@keyframes flicker {
+    0% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+/* Mobile Compatibility Adjustments - Example */
+@media (max-width: 600px) {
+    .cake-layer-top { width: 80px; height: 25px; }
+    .cake-layer-middle { width: 100px; height: 30px; }
+    .cake-layer-bottom { width: 120px; height: 35px; }
+    .candles-container::before {
+        height: 15px; /* Smaller candles on mobile */
+        margin: 3px; /* Less spacing between candles on mobile */
+    }
+    .birthday-message h1 {
+        font-size: 2em; /* Smaller heading on mobile */
+    }
+}

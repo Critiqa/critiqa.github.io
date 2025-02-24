@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 30th Birthday!</title>
+    <style>
+        body { text-align: center; background-color: #ffe5b4; font-family: Arial, sans-serif; }
+        .cake-container { position: relative; display: inline-block; margin-top: 50px; }
+        .cake { width: 700px; height: 200px; background: #d2691e; border-radius: 20px 20px 0 0; position: relative; margin: 0 auto; }
+        .cake::before { content: ''; width: 720px; height: 20px; background: #8b4513; position: absolute; bottom: -20px; left: -10px; border-radius: 10px; }
+        .candles { position: absolute; top: -50px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; justify-content: center; width: 100%; }
+        .candle { width: 10px; height: 40px; background: red; position: relative; }
+        .flame { width: 10px; height: 15px; background: orange; border-radius: 50%; position: absolute; top: -15px; left: 0; animation: flicker 0.2s infinite alternate; }
+        @keyframes flicker { 0% { opacity: 1; } 100% { opacity: 0.6; } }
+        .hidden { display: none; }
+        .video-container { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Happy 30th Birthday!</h1>
+    <audio id="music" src="happy_birthday.mid" autoplay loop></audio>
+    <div class="cake-container">
+        <div class="cake"></div>
+        <div id="candles" class="candles"></div>
+    </div>
+    <h2 id="message" class="hidden">🎉 Boldogat te emberi lény! 🎉</h2>
+    <div id="video" class="video-container hidden">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/pJz2yXsmdFM" frameborder="0" allowfullscreen></iframe>
+    </div>
+    
+    <script>
+        // Create candles
+        const candleContainer = document.getElementById("candles");
+        for (let i = 0; i < 30; i++) {
+            let candle = document.createElement("div");
+            candle.classList.add("candle");
+            let flame = document.createElement("div");
+            flame.classList.add("flame");
+            candle.appendChild(flame);
+            candleContainer.appendChild(candle);
+        }
+
+        // Microphone setup
+        navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
+            const audioContext = new AudioContext();
+            const analyser = audioContext.createAnalyser();
+            const microphone = audioContext.createMediaStreamSource(stream);
+            microphone.connect(analyser);
+            analyser.fftSize = 256;
+            const dataArray = new Uint8Array(analyser.frequencyBinCount);
+
+            function detectBlow() {
+                analyser.getByteFrequencyData(dataArray);
+                let volume = dataArray.reduce((a, b) => a + b, 0) / dataArray.length;
+                if (volume > 50) {
+                    blowOutCandle();
+                }
+                requestAnimationFrame(detectBlow);
+            }
+            detectBlow();
+        });
+
+        function blowOutCandle() {
+            let flames = document.querySelectorAll(".flame:not(.hidden)");
+            if (flames.length > 0) {
+                flames[0].classList.add("hidden");
+            }
+            if (document.querySelectorAll(".flame:not(.hidden)").length === 0) {
+                document.getElementById("message").classList.remove("hidden");
+                document.getElementById("video").classList.remove("hidden");
+            }
+        }
+    </script>
+</body>
+</html>
