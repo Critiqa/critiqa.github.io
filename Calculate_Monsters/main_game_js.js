@@ -5,8 +5,6 @@ It's obviously not ready yet. */
 let typed_num;
 typed_num = "";
 
-
-
 /*Just a basic random number generator, which has a max and min threshold.
 Will be useful when creating difficulty modes, as those thresholds will be variables. */
 function getRndInteger(min, max) {
@@ -78,11 +76,11 @@ function problemGen(){
 }
 
 /*This will hold the previous selected difficulty
-This is here to reduce spamming the difficulty buttons 
+This is here to reduce spamming the difficulty buttons.
 1 by default, as the default difficulty is Easy*/
 let prevDif = 1;
 
-/*This function handles difficulty selection. Difficulty is meant by extendind the random range. */
+/*This function handles difficulty selection. Difficulty is meant by extending the random range. */
 function select_dif(dif){
     if (dif == prevDif){
         return;
