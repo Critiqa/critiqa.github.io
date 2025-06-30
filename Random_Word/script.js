@@ -10,22 +10,41 @@ let wordRemain;
 let word = "";
 
 function wordGen(){
- wordLen = getRndInteger(5, 9);
+    wordLen = getRndInteger(5, 9);
+    conStart = getRndInteger(0,2) ? false : true;
+    console.log(conStart)
     wordRemain = wordLen;
-    while (wordRemain >= 3){
+    if (conStart){
+        while (wordRemain >= 3){
         word += consonants[getRndInteger(0, consonants.length - 1)];
         word += vowels[getRndInteger(0, vowels.length - 1)];
         word += consonants[getRndInteger(0, consonants.length - 1)];
 
         wordRemain -= 3;
-    }
-    while (wordRemain >= 2){
+        }
+        while (wordRemain >= 2){
+            word += vowels[getRndInteger(0, vowels.length - 1)];
+            word += consonants[getRndInteger(0, consonants.length - 1)];
+            wordRemain -= 2;
+        }
         word += vowels[getRndInteger(0, vowels.length - 1)];
-        word += consonants[getRndInteger(0, consonants.length - 1)];
-        wordRemain -= 2;
+        document.getElementById("genWord").innerHTML = word;
     }
-    word += vowels[getRndInteger(0, vowels.length - 1)];
-    document.getElementById("genWord").innerHTML = word;
+    else{
+        while (wordRemain >= 3){
+            word += vowels[getRndInteger(0, vowels.length - 1)];
+            word += consonants[getRndInteger(0, consonants.length - 1)];
+            word += vowels[getRndInteger(0, vowels.length - 1)];
+            wordRemain -= 3;
+        }
+        while (wordRemain >= 2){
+            word += consonants[getRndInteger(0, consonants.length - 1)];
+            word += vowels[getRndInteger(0, vowels.length - 1)];
+            wordRemain -= 2;
+        }
+        word += vowels[getRndInteger(0, vowels.length - 1)];
+        document.getElementById("genWord").innerHTML = word;
+    }
 }
 
  wordGen()
