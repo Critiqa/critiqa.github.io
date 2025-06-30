@@ -1,3 +1,9 @@
+/*Just a basic random number generator, which has a max and min threshold.
+Will be useful when creating difficulty modes, as those thresholds will be variables. */
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+  }
+
 /*Character Name Generator */
 const consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"];
 const vowels = ["a", "e", "i", "o", "u"];
@@ -23,8 +29,10 @@ function monNameGen(){
         playerNameRemain -= 2;
     }
     playerName += vowels[getRndInteger(0, vowels.length - 1)];
-    document.getElementById("monster-name").innerHTML = "Name: " + playerName;
+    document.getElementById("playerName").innerHTML = "Name: " + playerName;
+    playerName = playerName[0].toUpperCase() + playerName.substring(1);
 
 }
 
 monNameGen()
+console.log("Your name is " + playerName); 

@@ -33,3 +33,8 @@ table {
     /* Optional: make table cells fill the height */
     table-layout: fixed;
 }
+
+#chatWindow {
+  background-color: black;
+  
+}

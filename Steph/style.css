@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Hide scrollbars if image is larger than viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000; /* Fallback background color */
+}
+
+.container {
+    position: relative;
+    width: 100vw; /* Occupy full viewport width */
+    height: 100vh; /* Occupy full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Place image behind text */
+}
+
+.text-overlay {
+    position: absolute;
+    font-family: 'Impact', sans-serif; /* Or 'Arial Black', or other heavy sans-serif */
+    font-size: 8vw; /* Responsive font size for mobile */
+    color: white;
+    text-align: center;
+    width: 90%; /* Adjust as needed */
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in width */
+    /* Black border for text */
+    -webkit-text-stroke: 2px black; /* For WebKit browsers (Chrome, Safari) */
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000; /* Fallback and more consistent outline */
+}
+
+.top-text {
+    top: 5%; /* Adjust vertical position */
+}
+
+.bottom-text {
+    bottom: 5%; /* Adjust vertical position */
+}
+
+/* Optional: Adjust font size for very small screens if 8vw is too large */
+@media (max-width: 480px) {
+    .text-overlay {
+        font-size: 10vw;
+    }
+}
