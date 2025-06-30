@@ -1,20 +1,23 @@
 body {
     margin: 0;
-    overflow: hidden; /* Hide scrollbars if image is larger than viewport */
+    overflow: hidden; /* Hide scrollbars if content is larger than viewport */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #000; /* Fallback background color */
+    background-color: #000; /* Fallback background color for the space around the 'phone' */
 }
 
 .container {
     position: relative;
-    width: 100vw; /* Occupy full viewport width */
-    height: 100vh; /* Occupy full viewport height */
+    width: 100%; /* Default to full width on small screens */
+    height: 100vh; /* Default to full height on small screens */
     display: flex;
     justify-content: center;
     align-items: center;
+
+    /* Mobile-first: These are the default values for small screens */
+    /* They will be overridden by media queries for larger screens */
 }
 
 .background-image {
@@ -29,33 +32,91 @@ body {
 
 .text-overlay {
     position: absolute;
-    font-family: 'Impact', 'Arial Black', sans-serif; /* Or 'Arial Black', or other heavy sans-serif */
-    font-size: 8vw; /* Responsive font size for mobile */
+    font-family: 'Impact', sans-serif;
     color: white;
     text-align: center;
-    width: 90%; /* Adjust as needed */
-    padding: 10px;
+    width: 90%; /* Adjust text container width as needed */
+    padding: 5px; /* Reduced padding slightly to save space */
     box-sizing: border-box; /* Include padding in width */
     /* Black border for text */
-    -webkit-text-stroke: 2px black; /* For WebKit browsers (Chrome, Safari) */
+    -webkit-text-stroke: 1.5px black; /* Slightly thinner stroke for smaller fonts */
     text-shadow:
-        -1px -1px 0 #000,
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000; /* Fallback and more consistent outline */
+        -1.5px -1.5px 0 #000,
+        1.5px -1.5px 0 #000,
+        -1.5px 1.5px 0 #000,
+        1.5px 1.5px 0 #000; /* Fallback and more consistent outline */
+
+    /* Default font size for smallest mobile screens */
+    font-size: 7vw;
+    line-height: 1.1; /* Slightly tighter line spacing to reduce height */
 }
 
 .top-text {
-    top: 5%; /* Adjust vertical position */
+    top: 3%;
 }
 
 .bottom-text {
-    bottom: 5%; /* Adjust vertical position */
+    bottom: 3%;
 }
 
-/* Optional: Adjust font size for very small screens if 8vw is too large */
-@media (max-width: 480px) {
+/* Media Queries for Desktop and Tablet to mimic mobile */
+
+/* For screens larger than a typical mobile (e.g., tablets in portrait) */
+@media (min-width: 481px) {
     .text-overlay {
-        font-size: 10vw;
+        font-size: 6vw; /* Scale down slightly */
+        padding: 8px;
+    }
+    .top-text { top: 5%; }
+    .bottom-text { bottom: 5%; }
+}
+
+/* Main desktop mimicry: Constrain container to typical phone size */
+@media (min-width: 768px) {
+    .container {
+        /* Typical phone screen width and aspect ratio for desktop viewing */
+        width: 375px; /* iPhone X/11/12/13/14 portrait width */
+        height: 812px; /* iPhone X/11/12/13/14 portrait height */
+        /* You can adjust these dimensions to mimic a specific phone model */
+
+        /* Optional: Add a border or shadow to make it look like a device frame */
+        border: 10px solid #333;
+        border-radius: 40px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        overflow: hidden; /* Important to keep image/text within this frame */
+    }
+
+    .text-overlay {
+        /* For desktop, font sizes will be fixed based on the container's fixed size */
+        font-size: 30px; /* Adjust this fixed pixel value to look good within 375px width */
+        max-width: 340px; /* Constrain text width within the fixed container */
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-text-stroke: 2px black; /* Restore original stroke thickness */
+        text-shadow:
+            -2px -2px 0 #000,
+            2px -2px 0 #000,
+            -2px 2px 0 #000,
+            2px 2px 0 #000;
+    }
+    .top-text { top: 10%; }
+    .bottom-text { bottom: 10%; }
+}
+
+/* For very large desktop screens, maintain the same fixed phone size */
+@media (min-width: 1024px) {
+    .container {
+        /* No change to width/height, it remains fixed as a phone */
+        /* You could slightly increase if mimicking a larger phone like a Max model */
+        width: 414px; /* Example for iPhone 6/7/8 Plus, XR, 11, 12/13/14 Pro Max width */
+        height: 896px; /* Example height */
+    }
+
+    .text-overlay {
+        font-size: 34px; /* Adjust font size for the slightly larger "phone" */
+        max-width: 380px;
     }
 }
+
+/* You can add more specific breakpoints for different "phone" sizes if desired */
+/* For example, if you want to mimic a landscape tablet at certain sizes. */
