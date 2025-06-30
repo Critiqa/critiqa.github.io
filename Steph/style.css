@@ -56,7 +56,7 @@ body {
 }
 
 .bottom-text {
-    bottom: 3%;
+    bottom: 15%;
 }
 
 /* Media Queries for Desktop and Tablet to mimic mobile */
@@ -68,7 +68,7 @@ body {
         padding: 8px;
     }
     .top-text { top: 15%; }
-    .bottom-text { bottom: 15%; }
+    .bottom-text { bottom: 35%; }
 }
 
 /* Main desktop mimicry: Constrain container to typical phone size */
