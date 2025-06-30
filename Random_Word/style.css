@@ -1,0 +1,11 @@
+#title {
+    text-align: center;
+    font-size: 26pt;
+}
+
+main {
+    margin: 20px 20px;
+    padding: 0px 20px;
+    border: 2px solid black;
+    border-radius: 25px;
+}
